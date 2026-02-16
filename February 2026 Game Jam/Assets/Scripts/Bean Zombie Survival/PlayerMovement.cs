@@ -1,14 +1,16 @@
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float speed = 1.0f;
     public float jumpStrength = 5f;
     public Rigidbody rb;
     private float horizontalInput;
     private float verticalInput;
     private bool isGrounded = false;
     public int playerHealth = 10;
+    public float moveSpeed = 5f;
+    public float rotationSpeed = 150f;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -47,13 +49,11 @@ public class PlayerMovement : MonoBehaviour
     }
     private void Movement()
     {
-        float x = Input.GetAxisRaw("Horizontal");
-        float z = Input.GetAxisRaw("Vertical");
+        float turn = Input.GetAxisRaw("Horizontal") * rotationSpeed * Time.deltaTime;
+        float move = Input.GetAxisRaw("Vertical") * moveSpeed * Time.deltaTime;
 
-        Vector3 moveDirection = transform.right * x + transform.forward * z;
-        Vector3 velocity = moveDirection * speed;
-
-        rb.linearVelocity= new Vector3(velocity.x, rb.linearVelocity.y, velocity.z);
+        transform.Translate(0f, 0f, move);
+        transform.Rotate(0, turn, 0f);
     }
     public void TakeDamage(int amount)
     {
