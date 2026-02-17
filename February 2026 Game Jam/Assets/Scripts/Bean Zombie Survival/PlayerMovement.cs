@@ -3,6 +3,7 @@ using UnityEngine.UIElements;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public Animator anim;
     public float jumpStrength = 5f;
     public Rigidbody rb;
     private float horizontalInput;
@@ -15,6 +16,7 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -49,12 +51,32 @@ public class PlayerMovement : MonoBehaviour
     }
     private void Movement()
     {
-        float turn = Input.GetAxisRaw("Horizontal") * rotationSpeed * Time.deltaTime;
-        float move = Input.GetAxisRaw("Vertical") * moveSpeed * Time.deltaTime;
+        float turn = 0f;
+        float move = 0f;
+
+        // Movement
+        if (Input.GetKey(KeyCode.A))
+            turn = -rotationSpeed * Time.deltaTime;
+
+        if (Input.GetKey(KeyCode.D))
+            turn = rotationSpeed * Time.deltaTime;
+
+        if (Input.GetKey(KeyCode.W))
+            move = moveSpeed * Time.deltaTime;
+
+        if (Input.GetKey(KeyCode.S))
+            move = -moveSpeed * Time.deltaTime;
 
         transform.Translate(0f, 0f, move);
         transform.Rotate(0, turn, 0f);
+
+        // Walking animation
+        bool walking = Mathf.Abs(move) > 0.01f;
+        anim.SetBool("isWalking", walking);
+
+        Debug.Log("Walking = " + walking);
     }
+
     public void TakeDamage(int amount)
     {
         playerHealth -= amount;
