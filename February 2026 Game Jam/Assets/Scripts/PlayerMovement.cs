@@ -43,7 +43,8 @@ public class PlayerMovement : MonoBehaviour
         }
         if (collision.gameObject.CompareTag("Danger"))
         {
-            
+            Debug.Log("Danger");
+            anim.SetBool("isFalling", true);
         }
     }
     private void OnCollisionExit(Collision collision)
@@ -51,6 +52,10 @@ public class PlayerMovement : MonoBehaviour
         if (collision.gameObject.CompareTag("Ground"))
         {
             isGrounded = false;
+        }
+        if (collision.gameObject.CompareTag("Danger"))
+        {
+            anim.SetBool("isFalling", false);
         }
     }
     private void Movement()
