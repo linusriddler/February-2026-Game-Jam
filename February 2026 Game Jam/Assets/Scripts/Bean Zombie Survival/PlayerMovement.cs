@@ -41,6 +41,10 @@ public class PlayerMovement : MonoBehaviour
         {
             isGrounded = true;
         }
+        if (collision.gameObject.CompareTag("Danger"))
+        {
+            
+        }
     }
     private void OnCollisionExit(Collision collision)
     {
@@ -73,8 +77,6 @@ public class PlayerMovement : MonoBehaviour
         // Walking animation
         bool walking = Mathf.Abs(move) > 0.01f;
         anim.SetBool("isWalking", walking);
-
-        Debug.Log("Walking = " + walking);
     }
 
     public void TakeDamage(int amount)
