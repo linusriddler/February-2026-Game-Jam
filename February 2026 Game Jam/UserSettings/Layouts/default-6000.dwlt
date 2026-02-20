@@ -48,7 +48,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 39
+  controlID: 17
   draggingID: 0
 --- !u!114 &3
 MonoBehaviour:
@@ -69,8 +69,8 @@ MonoBehaviour:
     y: 0
     width: 442
     height: 981
-  m_MinSize: {x: 276, y: 76}
-  m_MaxSize: {x: 4001, y: 4026}
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 14}
   m_Panes:
   - {fileID: 14}
@@ -95,8 +95,8 @@ MonoBehaviour:
     y: 0
     width: 302
     height: 762
-  m_MinSize: {x: 201, y: 226}
-  m_MaxSize: {x: 4001, y: 4026}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 15}
   m_Panes:
   - {fileID: 15}
@@ -224,7 +224,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 40
+  controlID: 18
   draggingID: 0
 --- !u!114 &10
 MonoBehaviour:
@@ -250,7 +250,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 50}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 41
+  controlID: 19
   draggingID: 0
 --- !u!114 &11
 MonoBehaviour:
@@ -399,7 +399,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/ObstacleCoursePack/Scripts
+    - Assets/My Prefabs/Obstacles
     m_Globs: []
     m_ProductIds: 
     m_AnyWithAssetOrigin: 0
@@ -409,31 +409,31 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/ObstacleCoursePack/Scripts
+  - Assets/My Prefabs/Obstacles
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\02MADDOX.GREENSPOON\Maddox Greenspoon\Repositories\February-2026-Game-Jam\February
     2026 Game Jam
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 240}
-    m_SelectedIDs: 3ebe0000
-    m_LastClickedID: 48702
-    m_ExpandedIDs: 00000000ccb10000ceb10000d0b10000d2b10000d4b100002eb2000034b2000044be00009ac6000032c7000000ca9a3b
+    scrollPos: {x: 0, y: 167}
+    m_SelectedIDs: b8b80000
+    m_LastClickedID: 47288
+    m_ExpandedIDs: 0000000018b700001ab700001cb700001eb7000020b7000022b7000024b7000026b7000028b7000098b8000030bc000034bc00003ebc00006abd0000f2d0010000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: Models
-      m_OriginalName: Models
+      m_Name: 
+      m_OriginalName: 
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 51004
+      m_UserData: 0
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 0
+      m_OriginalEventType: 11
       m_IsRenamingFilename: 1
       m_TrimLeadingAndTrailingWhitespace: 0
       m_ClientGUIView: {fileID: 5}
@@ -448,7 +448,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000ccb10000ceb10000d0b10000d2b10000d4b10000
+    m_ExpandedIDs: 0000000018b700001ab700001cb700001eb7000020b7000022b7000024b7000026b7000028b70000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -577,9 +577,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 341fffff
+      m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 86fafeff9efafeffb6fafeffe2fafeff3cfbfeff54fbfeff6efbfeff12fffeff3afffeff6efffeff88fffeffb4fffeffccfffefff8fffeffb400ffffdc00fffff600ffff1e01ffffb402ffffcc02ffff4c03ffff8203ffffc603ffff2a04ffff7a04ffff9204ffffaa04ffffc404ffffb606ffffd006ffff0e07ffff465bffff6068ffff8668ffffac68ffffd868ffff5669ffff7c69ffff9669ffff666dffff9c6dffffe86dffff026effff2e6effff546effff946effff5e6fffff866fffffa06fffffd66fffff9271ffffc271ffff4272ffff8672ffffd872ffff4a73ffff9a73ffffc073ffffe673ffff0074ffff0076ffff1a76ffff6276ffff62f1ffff70f2ffff50f3ffff2ef6fffffafaffff
+      m_ExpandedIDs: 2c60ffffbec1ffffd6c1ffffeec1ffff1ac2ffff74c2ffff8cc2ffffa6c2ffff4ac6ffff72c6ffffb0c6ffffcac6fffff6c6ffff0ec7ffff4ec7ffff0ac8ffff32c8ffff4cc8ffff74c8ffff0acaffff2ccaffffaccaffffe2caffff26cbffff8acbffffdacbfffff2cbffff0accffff24ccffff16ceffff30ceffff7aceffff20faffffccfaffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -1183,9 +1183,9 @@ MonoBehaviour:
   m_AudioPlay: 0
   m_DebugDrawModesUseInteractiveLightBakingData: 0
   m_Position:
-    m_Target: {x: 43.74142, y: 204.21326, z: 78.12297}
+    m_Target: {x: 4.439641, y: 224.87404, z: 114.98053}
     speed: 2
-    m_Value: {x: 43.74142, y: 204.21326, z: 78.12297}
+    m_Value: {x: 4.439641, y: 224.87404, z: 114.98053}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1231,13 +1231,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.05857352, y: 0.9356378, z: -0.18657818, w: -0.29407138}
+    m_Target: {x: 0.08345833, y: 0.46983725, z: -0.044715717, w: 0.87783146}
     speed: 2
-    m_Value: {x: -0.058569472, y: 0.9355731, z: -0.18656528, w: -0.29405105}
+    m_Value: {x: 0.0847621, y: 0.46969917, z: -0.04541394, w: 0.8775737}
   m_Size:
-    m_Target: 0.98827887
+    m_Target: 10.0459585
     speed: 2
-    m_Value: 0.98827887
+    m_Value: 10.0459585
   m_Ortho:
     m_Target: 0
     speed: 2
