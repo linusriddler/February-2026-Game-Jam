@@ -6,8 +6,6 @@ public class PlayerMovement : MonoBehaviour
     public Animator anim;
     public float jumpStrength = 5f;
     public Rigidbody rb;
-    private float horizontalInput;
-    private float verticalInput;
     private bool isGrounded = false;
     public int playerHealth = 10;
     public float moveSpeed = 5f;
@@ -34,16 +32,14 @@ public class PlayerMovement : MonoBehaviour
     void Jump()
     {
         rb.AddForce(Vector3.up * jumpStrength, ForceMode.Impulse);
+
     }
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Ground"))
         {
             isGrounded = true;
-        }
-        if (collision.gameObject.CompareTag("Danger"))
-        {
-            
+            anim.SetBool("isGrounded", true);
         }
     }
     private void OnCollisionExit(Collision collision)
@@ -51,6 +47,7 @@ public class PlayerMovement : MonoBehaviour
         if (collision.gameObject.CompareTag("Ground"))
         {
             isGrounded = false;
+            anim.SetBool("isGrounded", false);
         }
     }
     private void Movement()
@@ -76,7 +73,7 @@ public class PlayerMovement : MonoBehaviour
 
         // Walking animation
         bool walking = Mathf.Abs(move) > 0.01f;
-        anim.SetBool("isWalking", walking);
+        anim.SetBool("isWalking", walking && isGrounded);
     }
 
     public void TakeDamage(int amount)

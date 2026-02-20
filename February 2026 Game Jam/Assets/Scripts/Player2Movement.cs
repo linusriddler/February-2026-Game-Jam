@@ -40,12 +40,20 @@ public class Player2Movement : MonoBehaviour
         {
             isGrounded2 = true;
         }
+        if (collision.gameObject.CompareTag("Danger"))
+        {
+            anim2.SetBool("isFalling", true);
+        }
     }
     private void OnCollisionExit(Collision collision)
     {
         if (collision.gameObject.CompareTag("Ground"))
         {
             isGrounded2 = false;
+        }
+        if (collision.gameObject.CompareTag("Danger"))
+        {
+            anim2.SetBool("isFalling", false);
         }
     }
     private void Movement2()
