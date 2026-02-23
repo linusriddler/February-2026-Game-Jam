@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Button : MonoBehaviour
 {
-    public Transform objectToMove;
+    public Rigidbody objectToMove;
 
     public Vector3 loweredOffset = new Vector3(0, -2f, 0);
     public float moveSpeed = 3f;
@@ -17,7 +17,7 @@ public class Button : MonoBehaviour
         loweredPosition = startPosition + loweredOffset;
     }
 
-    void Update()
+    void FixedUpdate()
     {
         Vector3 target = isPressed ? loweredPosition : startPosition;
         objectToMove.position = Vector3.Lerp(objectToMove.position, target, moveSpeed * Time.deltaTime);
