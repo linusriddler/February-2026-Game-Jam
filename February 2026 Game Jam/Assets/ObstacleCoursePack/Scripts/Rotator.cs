@@ -1,15 +1,17 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Rotator : MonoBehaviour
 {
-	public float speed = 3f;
+    public Rigidbody rb;
+    public Vector3 rotationAxis = Vector3.up;
+    public float rotationSpeed = 90f;
 
-
-    // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-		transform.Rotate(0f, 0f, speed * Time.deltaTime / 0.01f, Space.Self);
-	}
+        Quaternion deltaRotation = Quaternion.Euler(
+            rotationAxis * rotationSpeed * Time.fixedDeltaTime
+        );
+
+        rb.MoveRotation(rb.rotation * deltaRotation);
+    }
 }
