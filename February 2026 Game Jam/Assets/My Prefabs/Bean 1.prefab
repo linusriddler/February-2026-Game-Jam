@@ -802,7 +802,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Player2Movement
   anim2: {fileID: 2926968042531684673}
-  jumpStrength2: 5
+  jumpStrength2: 7
   rb2: {fileID: 4351227811921621857}
   playerHealth2: 10
   moveSpeed2: 5
