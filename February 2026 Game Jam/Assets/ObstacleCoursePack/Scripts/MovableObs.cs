@@ -30,7 +30,7 @@ public class MovableObs : MonoBehaviour
 	}
 
 	// Update is called once per frame
-	void Update()
+	void FixedUpdate()
 	{
 		platformVelocity = (transform.position - lastPosition) / Time.deltaTime;
 		lastPosition = transform.position;
