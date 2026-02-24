@@ -14,7 +14,6 @@ public class Player2Movement : MonoBehaviour
     public float rotationSpeed2 = 150f;
     public AudioSource walkAudio2;
     public AudioClip jumpClip2;
-
     void Start()
     {
         rb2 = GetComponent<Rigidbody>();
@@ -50,26 +49,14 @@ public class Player2Movement : MonoBehaviour
         {
             isGrounded2 = true;
         }
-
-        if (collision.gameObject.CompareTag("Danger"))
-        {
-            anim2.SetBool("isFalling", true);
-        }
     }
-
     private void OnCollisionExit(Collision collision)
     {
         if (collision.gameObject.CompareTag("Ground"))
         {
             isGrounded2 = false;
         }
-
-        if (collision.gameObject.CompareTag("Danger"))
-        {
-            anim2.SetBool("isFalling", false);
-        }
     }
-
     private void Movement2()
     {
         float turn2 = 0f;
@@ -103,19 +90,6 @@ public class Player2Movement : MonoBehaviour
         {
             if (walkAudio2.isPlaying)
                 walkAudio2.Stop();
-        }
-
-        Debug.Log("Walking = " + walking2);
-    }
-
-    public void TakeDamage(int amount2)
-    {
-        playerHealth2 -= amount2;
-        Debug.Log("Player hit! Health: " + playerHealth2);
-
-        if (playerHealth2 <= 0)
-        {
-            Debug.Log("Player Died");
         }
     }
 }
