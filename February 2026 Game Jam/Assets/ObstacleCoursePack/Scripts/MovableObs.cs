@@ -11,9 +11,17 @@ public class MovableObs : MonoBehaviour
 
 	private bool isForward = true; //If the movement is out
 	private Vector3 startPos;
-   
-    void Awake()
-    {
+	private Vector3 lastPosition;
+	private Vector3 platformVelocity;
+
+
+	void Start()
+	{
+		lastPosition = transform.position;
+	}
+
+	void Awake()
+	{
 		startPos = transform.position;
 		if (horizontal)
 			transform.position += Vector3.right * offset;
@@ -21,9 +29,12 @@ public class MovableObs : MonoBehaviour
 			transform.position += Vector3.forward * offset;
 	}
 
-    // Update is called once per frame
-    void Update()
-    {
+	// Update is called once per frame
+	void Update()
+	{
+		platformVelocity = (transform.position - lastPosition) / Time.deltaTime;
+		lastPosition = transform.position;
+
 		if (horizontal)
 		{
 			if (isForward)
@@ -66,5 +77,18 @@ public class MovableObs : MonoBehaviour
 					isForward = true;
 			}
 		}
-    }
+	}
+
+	void OnCollisionStay(Collision collision)
+	{
+		if (collision.gameObject.CompareTag("Player"))
+		{
+			Rigidbody rb = collision.gameObject.GetComponent<Rigidbody>();
+			if (rb != null)
+			{
+				rb.position += platformVelocity * Time.deltaTime;
+			}
+		}
+
+	}
 }
