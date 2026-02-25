@@ -3468,6 +3468,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9168098980114217053, guid: 5d2449321e84453498bb6f37f0a86004, type: 3}
+      propertyPath: JumpAudio
+      value: 
+      objectReference: {fileID: 1593411994}
+    - target: {fileID: 9168098980114217053, guid: 5d2449321e84453498bb6f37f0a86004, type: 3}
       propertyPath: jumpClip2
       value: 
       objectReference: {fileID: 0}
@@ -3790,7 +3794,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 026d3b714ff6fdd45af9532c728c8341, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.422
   m_Pitch: 1
   Loop: 0
   Mute: 0

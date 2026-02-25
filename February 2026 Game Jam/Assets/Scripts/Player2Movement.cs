@@ -13,7 +13,7 @@ public class Player2Movement : MonoBehaviour
     public float moveSpeed2 = 5f;
     public float rotationSpeed2 = 150f;
     public AudioSource walkAudio2;
-    public AudioClip jumpClip2;
+    public AudioSource JumpAudio;
     void Start()
     {
         rb2 = GetComponent<Rigidbody>();
@@ -37,10 +37,7 @@ public class Player2Movement : MonoBehaviour
     {
         rb2.AddForce(Vector3.up * jumpStrength2, ForceMode.Impulse);
 
-        if (jumpClip2 != null)
-        {
-            walkAudio2.PlayOneShot(jumpClip2);
-        }
+        JumpAudio.Play();
     }
 
     private void OnCollisionEnter(Collision collision)
