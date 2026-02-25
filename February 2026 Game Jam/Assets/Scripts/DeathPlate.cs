@@ -1,9 +1,8 @@
 using UnityEngine;
-using System.Collections;
 
 public class DeathPlate : MonoBehaviour
 {
-    public Transform respawnPoint; // Assign in Inspector
+    public Transform[] respawnPoints; // Set multiple in Inspector
 
     private void OnTriggerEnter(Collider other)
     {
@@ -17,7 +16,31 @@ public class DeathPlate : MonoBehaviour
                 rb.angularVelocity = Vector3.zero;
             }
 
-            other.transform.position = respawnPoint.position;
+            Transform closestPoint = GetClosestSpawnPoint(other.transform.position);
+
+            if (closestPoint != null)
+            {
+                other.transform.position = closestPoint.position;
+            }
         }
+    }
+
+    Transform GetClosestSpawnPoint(Vector3 playerPosition)
+    {
+        Transform closest = null;
+        float closestDistance = Mathf.Infinity;
+
+        foreach (Transform point in respawnPoints)
+        {
+            float distance = Vector3.Distance(playerPosition, point.position);
+
+            if (distance < closestDistance)
+            {
+                closestDistance = distance;
+                closest = point;
+            }
+        }
+
+        return closest;
     }
 }
