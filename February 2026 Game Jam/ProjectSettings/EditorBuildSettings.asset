@@ -11,7 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/The Game.unity
     guid: 99c9720ab356a0642a771bea13969a05
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/PlaceHolder Game.unity
     guid: 084f1ba0f5c3614459bd60c596fd0883
   m_configObjects:
